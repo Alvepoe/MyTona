@@ -13,19 +13,16 @@ const PaginationItem = ({page, currentPage, url}) => {
         "page-content__pagination-link_active": currentPage === page
     });
     return (
-
         <Link className={classes} to={`${url}?page=${page}`}>
             {page}
         </Link>
-
     )
 };
 
-const Pagination = ({total, pageSize, url, page: currentPage, portionSize = 10, portionNumber, updatePortionNumber}) => {debugger;
+const Pagination = ({total, pageSize, url, page: currentPage, portionSize = 10, portionNumber, updatePortionNumber}) => {
 
     const pagesCount = Math.ceil(total / pageSize);
     const pages = range(1, pagesCount);
-
 
     const portionCount = Math.ceil(pagesCount / portionSize);
     const leftBound = (portionNumber - 1) * portionSize + 1;
@@ -58,7 +55,7 @@ const mapStateToProps = ({pagination: {portionNumber}}) => {
 
 function mapDispatchToProps(dispatch) {
     return {
-        updatePortionNumber: (portionNumber) => {debugger;
+        updatePortionNumber: (portionNumber) => {
             dispatch(actionCreator.updatePortionNumber(portionNumber));
         }
     }
