@@ -21,13 +21,17 @@ const optimize = () => {
 
 const chooseFilePattern = ext => isProd ? `[name].[hash].${ext}` : `[name].${ext}`;
 
+function choosePublicPath () {
+   return !isProd ? '/' : ''
+}
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: "./index.js",
     output: {
         path: path.join(__dirname, "/dist"),
         filename: chooseFilePattern('js'),
-        publicPath: '/'
+        publicPath: choosePublicPath()
     },
     devServer: {
         port: 3000,
@@ -44,7 +48,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
+                        presets: ["@babel/preset-env", "@babel/preset-react"]
                     }
                 },
 
@@ -55,6 +59,7 @@ module.exports = {
                     loader: MiniCssExtractPlugin.loader,
                     options: {
                         hmr: true,
+                        publicPath: choosePublicPath()
                     },
                 }, "css-loader"]
             },
@@ -64,6 +69,7 @@ module.exports = {
                     loader: MiniCssExtractPlugin.loader,
                     options: {
                         hmr: true,
+                        publicPath: choosePublicPath()
                     },
                 }, "css-loader", "sass-loader"]
             },
