@@ -1,6 +1,6 @@
 import {parse} from 'query-string'
 
-export const repoLink = "https://github.com/Alvepoe/MyTona_Test_Task.git";
+export const repoLink = "https://github.com/Alvepoe/MyTona";
 export const pageSize = 5;
 export const apiKey = "0d4c34af020a4855a7f0e2df70cde317";
 export const baseUrl = "https://newsapi.org/v2";
