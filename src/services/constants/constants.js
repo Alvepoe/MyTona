@@ -1,0 +1,2 @@
+export const UPDATE_PORTION_NUMBER = "UPDATE_PORTION_NUMBER";
+export const LOG_IN = "LOG_IN"

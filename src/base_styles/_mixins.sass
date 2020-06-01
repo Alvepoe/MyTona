@@ -1,0 +1,16 @@
+@import './colors'
+
+@mixin fill-available
+  width: 100%
+  width: -moz-available
+  width: -webkit-fill-available
+  height: 100%
+  height: -moz-available
+  height: -webkit-fill-available
+
+@mixin container ($width, $height)
+  background: $container
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 5px
+  height: $width
+  width: $height

@@ -1,0 +1,15 @@
+@import '../../base_styles/mixins'
+
+.error
+  @include container(200px, 200px)
+  margin: auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  border: 1px solid $error
+
+
+.error-text
+  color: $error
+  text-align: center

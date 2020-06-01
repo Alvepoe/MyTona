@@ -1,0 +1,32 @@
+@import '../../../base_styles/mixins'
+
+
+.page-content__login-container
+  @include container(200px, 200px)
+  margin: auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.page-content__login-button
+  line-height: 1.5715
+  position: relative
+  display: inline-block
+  font-weight: 400
+  border: 1px solid cadetblue
+  -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.015)
+  box-shadow: 0 2px 0 rgba(0,0,0,.015)
+  cursor: pointer
+  height: 32px
+  padding: 4px 15px
+  font-size: 14px
+  color: rgba(0,0,0,.65)
+  background-color: transparent
+  &:hover
+    color: #40a9ff
+    background-color: #fff
+    border-color: #40a9ff
+
+.page-content__login-text
+  text-align: center
